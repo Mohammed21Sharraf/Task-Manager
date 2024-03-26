@@ -1,12 +1,21 @@
-// import { Route, Routes } from 'react-router-dom';
+// @babel/plugin-proposal-private-property-in-object
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
-import Registration from './components/Registration/SignIn';
+import SignUp from './components/Registration/SignUp';
+import SignIn from './components/Registration/SignIn';
+import Dashboard from './components/Dashboard/Dashboard';
+
 
 function App() {
   return (
-    <div >
-      <Registration/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<SignUp/>}/>
+        <Route path='/login' element={<SignIn/>}/>
+        <Route path='/dashboard' element={<Dashboard/>}/>
+      </Routes>
+    </BrowserRouter>
+    
   );
 }
 
