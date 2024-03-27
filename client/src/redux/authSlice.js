@@ -2,12 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import history from '../history';
 
+const initialUser = localStorage.getItem('auth')
+	? JSON.parse(localStorage.getItem('auth'))
+	: null;
 
 const initialState = {
 	isLoading: false,
-	currentUser: null,
+	currentUser: initialUser,
 	error: null,
 };
+
 export const authSlice = createSlice({
 	name: 'auth',
 	initialState: initialState,
@@ -74,7 +78,7 @@ export const register = (user) => async (dispatch) => {
 };
 
 export const signin = (user) => async (dispatch) => {
-	console.log(user);
+	// console.log(user);
 	try {
 		const userData = {
 			email: user.email,
@@ -82,9 +86,12 @@ export const signin = (user) => async (dispatch) => {
 		};
 		const response = await axios.post(
 			'http://localhost:4000/api/v1/login',
-			userData
+			userData,
+			{withCredentials: true}
 		);
+		// console.log(response);
 		if (response) {
+			console.log(response.data);
 			localStorage.setItem('auth', JSON.stringify(response.data));
 			dispatch(loginSuccess(response.data));
 
