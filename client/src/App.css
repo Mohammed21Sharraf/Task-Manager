@@ -1,5 +1,4 @@
 
-
 @import url('https://fonts.googleapis.com/css?family=Oxanium:400,500,600,700,800|Poppins:400,400i,500,500i,600,600i,700,700i&display=swap');
 * {
     margin:0;
@@ -7,10 +6,12 @@
     box-sizing: border-box;
 }
 body {
+    /* background-image: url('../public/img/MT_fortaskmanagement_header.webp');
+    background-repeat: no-repeat; */
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: center; */
     min-height: 100vh;
     background-size: cover;
     background-position: center;

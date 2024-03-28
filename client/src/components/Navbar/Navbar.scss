@@ -7,7 +7,45 @@
     padding: 0 30px 0 30px;
     box-shadow: 0 6px 7px -3px rgba(0, 0, 0, 0.35);
   }
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
+  }
+  .header-right .icon{
+    color: azure;
+  }
+  .header-left input{
+    color: #ffff;
+  }
+  .header-left .icon{
+    color: azure;
+  }
+  .icon {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 20px;
+    color: rgb(135, 135, 135);
+  }
+  .icon_header {
+    vertical-align: middle;
+    line-height: 1px;
+    font-size: 26px;
+  }
+  .icon, .icon_header {
+    margin-right: 5px;
+  }
   
+  .close_icon {
+    color: red;
+    margin-left: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+  }
   .menu-icon {
     display: none;
+  }
+  .menu-icon.active{
+    display: block;
   }

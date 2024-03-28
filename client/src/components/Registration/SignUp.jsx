@@ -36,7 +36,8 @@ const SignUp = () => {
 		});
 	};
     return (
-        <div className='wrapper'>
+        <div className='main'>
+            <div className='wrapper'>
             <form onSubmit={handleSubmit}>
                 <h1>Welocome to task manager!</h1>
                 <h3> Create Account &#128513; </h3>
@@ -73,6 +74,8 @@ const SignUp = () => {
                 </div>
             </form>
         </div>
+        </div>
+      
     )
 }
 

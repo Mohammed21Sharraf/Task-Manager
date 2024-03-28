@@ -1,19 +1,29 @@
-import React from 'react'
+import {useState} from 'react'
 import { Navigate, useLocation } from "react-router-dom";
 import {  useSelector } from "react-redux";
 import Sidebar from '../components/Sidebar/Sidebar';
 import './Dashboard.scss'
 import Navbar from '../components/Navbar/Navbar';
+import Home from '../components/Home/Home';
+import { BsJustify, BsSearch } from 'react-icons/bs';
 
 const Dashboard = () => {
+    const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+
+  const OpenSidebar = () => {
+    setOpenSidebarToggle(!openSidebarToggle)
+  }
     const { auth } = useSelector((state) => ({...state}));
     const {currentUser} = auth;
     const location = useLocation();
     if (currentUser && currentUser.token){
         return (
-            <div className='grid-container'>
-                <Navbar/>
-              <Sidebar/>
+            <div >
+                <Navbar> 
+                <Home/>
+                </Navbar>
+                {/* <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/> */} 
+                
             </div>
           )
     }
@@ -23,3 +33,4 @@ const Dashboard = () => {
 }
 
 export default Dashboard
+

@@ -29,9 +29,10 @@ const SignIn = () => {
 		});
 	}; 
     return (
-        <div className='wrapper'>
+        <div className='main'>
+            <div className='wrapper'>
             <form action="" onSubmit={handleSubmit}>
-                <h1>Sign In &#128516;</h1>
+                <h1>SignIn &#128516;</h1>
                 <div className='input-box'>
                     <input  type='email'
 							name='email'
@@ -58,6 +59,8 @@ const SignIn = () => {
                 </div>
             </form>
         </div>
+        </div>
+        
     )
 }
 
