@@ -2,6 +2,8 @@ import * as React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
 import './TaskTable.scss'
+import Modal from '../Modal/Modal';
+
 
 
 const columns = [
@@ -35,11 +37,14 @@ const rows = [
 
 
 const TaskTable = () => {
+  const [openPopup, setOpenPopup ] = React.useState(false);
   return (
     <div style={{ height: 400, width: '100%' }}>
       <div className='but-container'>
+      <Modal openPopup={openPopup} setOpenPopup={setOpenPopup}>
 
-        <Button className='button' variant="outlined">Create task</Button>
+      </Modal>
+        <Button className='button' variant="outlined" onClick={()=> setOpenPopup(true)}>Create task</Button>
       </div>
       <DataGrid
 
